@@ -1,0 +1,20 @@
+{
+  "name": "prime-triskelion",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.11.0",
+    "gsap": "^3.12.5",
+    "@barba/core": "^2.9.7",
+    "tailwindcss": "^3.4.4"
+  }
+}
