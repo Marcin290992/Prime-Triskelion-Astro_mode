@@ -1,0 +1,158 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const team = [
+  {
+    name: 'Marcin Kowalski',
+    role: 'Founder & Creative Director',
+    bio: 'With 10+ years in design and technology, Marcin drives the creative vision behind every project.',
+    initial: 'MK',
+  },
+  {
+    name: 'Anna Wiśniewska',
+    role: 'Lead Developer',
+    bio: 'Full-stack specialist with deep expertise in Astro, React, and performance optimisation.',
+    initial: 'AW',
+  },
+  {
+    name: 'Piotr Nowak',
+    role: 'Motion Designer',
+    bio: 'GSAP wizard who transforms static interfaces into fluid, story-driven experiences.',
+    initial: 'PN',
+  },
+  {
+    name: 'Karolina Dąbrowska',
+    role: 'Brand Strategist',
+    bio: 'Brand and content strategist who ensures every visual decision is rooted in purpose.',
+    initial: 'KD',
+  },
+];
+
+const values = [
+  { title: 'Craft', desc: 'We obsess over the details that most people never notice — but everyone feels.' },
+  { title: 'Clarity', desc: 'Simple, transparent communication at every step of the project.' },
+  { title: 'Courage', desc: 'We challenge briefs, ask hard questions, and push creative boundaries.' },
+  { title: 'Commitment', desc: 'On time, on budget, and always going the extra mile for our clients.' },
+];
+---
+
+<Layout title="About" description="Learn about Prime Triskelion — our story, our team, and the values that drive us.">
+
+  <!-- Hero -->
+  <section class="relative pt-40 pb-20 bg-dark-900 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-600/10 rounded-full blur-3xl"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-6" data-gsap="fade-up">
+      <span class="section-label">About Us</span>
+      <h1 class="section-title mb-6">
+        A Studio That <span class="text-brand-400">Cares</span> About Your Success
+      </h1>
+      <p class="text-white/50 text-lg max-w-2xl leading-relaxed">
+        Prime Triskelion is a Warsaw-based creative digital agency founded in 2016.
+        We believe great digital products are born at the intersection of bold design,
+        clean code, and genuine human understanding.
+      </p>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-24 bg-dark-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Text -->
+        <div data-gsap="fade-up">
+          <span class="section-label">Our Story</span>
+          <h2 class="section-title mb-6">Built on <span class="text-brand-400">Passion</span></h2>
+          <div class="space-y-4 text-white/60 text-base leading-relaxed">
+            <p>
+              Prime Triskelion started as a one-person studio with a single goal: build websites
+              that look incredible <em>and</em> actually perform. Over the years, we've grown into
+              a tight-knit team of designers, developers, and strategists who share that same obsession.
+            </p>
+            <p>
+              The triskelion symbol — three interlocked spirals — represents our three pillars:
+              <strong class="text-white">design</strong>, <strong class="text-white">development</strong>,
+              and <strong class="text-white">strategy</strong>. In motion they become one.
+            </p>
+            <p>
+              Today we partner with startups, scale-ups, and established brands across Europe
+              to create digital products that move people — literally and figuratively.
+            </p>
+          </div>
+        </div>
+
+        <!-- Visual stats block -->
+        <div class="grid grid-cols-2 gap-4" data-gsap="stagger">
+          {[
+            { num: '50+', label: 'Projects Delivered' },
+            { num: '8+',  label: 'Years Active' },
+            { num: '35+', label: 'Happy Clients' },
+            { num: '4',   label: 'Core Team Members' },
+          ].map(({ num, label }) => (
+            <div class="card text-center">
+              <p class="font-display text-4xl font-bold text-brand-400 mb-2">{num}</p>
+              <p class="text-white/50 text-sm">{label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="py-24 bg-dark-900">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-gsap="fade-up">
+        <span class="section-label">What Drives Us</span>
+        <h2 class="section-title">Our <span class="text-brand-400">Values</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" data-gsap="stagger">
+        {values.map(({ title, desc }) => (
+          <div class="card text-center">
+            <h3 class="font-display text-2xl font-bold text-brand-400 mb-3">{title}</h3>
+            <p class="text-white/50 text-sm leading-relaxed">{desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="py-24 bg-dark-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-16" data-gsap="fade-up">
+        <span class="section-label">The People</span>
+        <h2 class="section-title">Meet the <span class="text-brand-400">Team</span></h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" data-gsap="stagger">
+        {team.map(({ name, role, bio, initial }) => (
+          <div class="card text-center group">
+            <!-- Avatar placeholder -->
+            <div class="w-20 h-20 rounded-full bg-gradient-to-br from-brand-600 to-brand-400 flex items-center justify-center mx-auto mb-5 group-hover:scale-105 transition-transform duration-300">
+              <span class="font-display text-2xl font-bold text-white">{initial}</span>
+            </div>
+            <h3 class="font-display text-lg font-bold mb-1">{name}</h3>
+            <p class="text-brand-400 text-xs font-semibold tracking-wide mb-4">{role}</p>
+            <p class="text-white/50 text-sm leading-relaxed">{bio}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-28 bg-dark-900 relative overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent"></div>
+    </div>
+    <div class="max-w-3xl mx-auto px-6 text-center" data-gsap="fade-up">
+      <span class="section-label">Work With Us</span>
+      <h2 class="section-title mb-6">Let's Create Something <span class="text-brand-400">Together</span></h2>
+      <p class="text-white/50 text-lg mb-10">We're always excited to hear about new projects.</p>
+      <a href="/contact" class="btn-primary">Get in Touch</a>
+    </div>
+  </section>
+
+</Layout>
